@@ -1,3 +1,5 @@
+import 'package:intersperse/intersperse.dart' as i;
+
 /// Puts [element] between every element in [list].
 ///
 /// Example:
@@ -36,4 +38,9 @@ Iterable<T> intersperseOuter<T>(T element, Iterable<T> list) {
     ...a,
     element,
   ];
+}
+
+extension IterableIntersperseExtension<T> on Iterable<T> {
+  Iterable<T> intersperse(T element) => i.intersperse(element, this);
+  Iterable<T> intersperseOuter(T element) => i.intersperseOuter(element, this);
 }
