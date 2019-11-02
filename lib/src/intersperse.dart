@@ -42,5 +42,6 @@ Iterable<T> intersperseOuter<T>(T element, Iterable<T> list) {
 
 extension IterableIntersperseExtension<T> on Iterable<T> {
   Iterable<T> intersperse(T element) => i.intersperse(element, this);
+
   Iterable<T> intersperseOuter(T element) => i.intersperseOuter(element, this);
 }
