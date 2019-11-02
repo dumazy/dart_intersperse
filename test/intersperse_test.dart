@@ -21,6 +21,10 @@ void main() {
         <int>[1, -1, 2, -1, 3],
       );
     });
+    test("is lazy", () {
+      final sut = List.generate(1000000, (a) => a).intersperse(-1);
+      expect(0, sut.first);
+    });
   });
 
   group("intersperseOuter", () {
@@ -37,9 +41,13 @@ void main() {
       expect(
           intersperseOuter(-1, <int>[1, 2, 3]), <int>[-1, 1, -1, 2, -1, 3, -1]);
     });
+    test("is lazy", () {
+      final sut = List.generate(1000000, (a) => a).intersperseOuter(-1);
+      expect(-1, sut.first);
+    });
   });
 
-  test("IterableIntersperseExtension ", () {
+  test("IterableIntersperseExtension", () {
     expect(<int>[].intersperse(-1), <int>[]);
     expect(<int>[1].intersperse(-1), <int>[1]);
     expect(<int>[1, 2].intersperse(-1), <int>[1, -1, 2]);

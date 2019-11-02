@@ -8,8 +8,8 @@ void main() {
   final list2Outer = intersperseOuter(2, [0]); // [2, 0, 2];
   final list3Outer = intersperseOuter(2, [0, 0]); // [2, 0, 2, 0, 2];
 
-  final Iterable<int> extension = [1,2].intersperse(-1);
-  final Iterable<int> extensionOuter = [1,2].intersperseOuter(-1);
+  final Iterable<int> extension = [1, 2].intersperse(-1);
+  final Iterable<int> extensionOuter = [1, 2].intersperseOuter(-1);
 
   print(list1);
   print(list2);
